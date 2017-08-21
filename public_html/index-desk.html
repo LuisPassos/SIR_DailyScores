@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Daily Scores</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+
+    <script src="js/jquery-2.1.4.js"></script>
+
+    <script>
+
+      $(document).ready(function(){
+          getPTGames();
+          getALGames();
+          getESGames();
+          getINGGames();
+          getITAGames();
+      });
+
+      function getPTGames(){
+      $.ajax('http://api.football-data.org/alpha/soccerseasons/403/fixtures',{
+        headers: { 'X-Auth-Token' : 'X' },
+        dataType: 'json',
+        type: 'GET',
+        success : showdata,
+      });
+      }
+
+      function getALGames(){
+      $.ajax('http://api.football-data.org/alpha/soccerseasons/394/fixtures',{
+        headers: { 'X-Auth-Token' : 'X' },
+        dataType: 'json',
+        type: 'GET',
+        success : showdata,
+      });
+      }
+
+      function getESGames(){
+      $.ajax('http://api.football-data.org/alpha/soccerseasons/398/fixtures',{
+        headers: { 'X-Auth-Token' : 'X' },
+        dataType: 'json',
+        type: 'GET',
+        success : showdata,
+      });
+      }
+
+      function getINGGames(){
+      $.ajax('http://api.football-data.org/alpha/soccerseasons/398/fixtures',{
+        headers: { 'X-Auth-Token' : 'X' },
+        dataType: 'json',
+        type: 'GET',
+        success : showdata,
+      });
+      }
+
+      function getITAGames(){
+      $.ajax('http://api.football-data.org/alpha/soccerseasons/401/fixtures',{
+        headers: { 'X-Auth-Token' : 'X' },
+        dataType: 'json',
+        type: 'GET',
+        success : showdata,
+       });
+      }
+
+
+
+
+      function showPTdata(data) {
+              console.log(data);
+               var today = new Date();
+               var tabela = $("<table/>").addClass("table table-bordered");
+               var t = $("<tr/>");
+               tabela.append(t);
+               var td2 = $("<td/>").html("Hora");
+               var td3 = $("<td/>").html("Casa");
+               var td4 = $("<td/>").html("Resultado");
+               var td5 = $("<td/>").html("Fora");
+               var td6 = $("<td/>").html("Jornada");
+               t.append(td2);
+               t.append(td3);
+               t.append(td4);
+               t.append(td5);
+               t.append(td6);
+            for(i = 0; i < data.count; i++) {
+            var datajogo = new Date(data.fixtures[i].date);
+            if(datajogo.getDate() == today.getDate() && datajogo.getMonth() == today.getMonth() && datajogo.getFullYear() == today.getFullYear()) {
+              var tr = $("<tr/>");
+              tabela.append(tr);
+              var minutos = datajogo.getMinutes();
+              if(minutos == 0) {
+                minutos = "0" + minutos;
+              }
+              var hora = $("<td/>").html(datajogo.getHours() + ":" + minutos + "H");
+              tr.append(hora);
+              var casa = $("<td/>").html(data.fixtures[i].homeTeamName);
+              tr.append(casa);
+              var resultado1 = data.fixtures[i].result.goalsAwayTeam;
+              var resultado2 = data.fixtures[i].result.goalsHomeTeam;
+              if(resultado1 == - 1) {
+                resultado1 = 0;
+                resultado2 = 0;
+              }
+              var resulta = resultado2 + "x" + resultado1;
+              var resultado = $("<td/>").html(resulta);
+              tr.append(resultado);
+              var fora = $("<td/>").html(data.fixtures[i].awayTeamName);
+              tr.append(fora);
+              var jornada = $("<td/>").html(data.fixtures[i].matchday);
+              tr.append(jornada);
+
+              $("#jogo-hoje").append(tabela);
+            }
+          }
+        }
+
+	</script>
+
+
+  </head>
+  <body>
+  	<div class="container">
+ 	<div class="header">
+    a href="index.html"><img src="images/logo.png"/></a>
+  	</div>
+
+	<div class="main">
+  		<div class="row">
+    		<div class="container-fluid">
+       			 <div class="col-md-3 menu">
+          	<p id="camp">Campeonatos</p>
+          	<hr>
+        	<ul class="nav nav-pills nav-stacked">
+        	<li><a href="portugal.html"><img src="images/bandeiras/pt.png" class="img-circle"> Liga NOS</img></a><p></p></li>
+        	<li><a href="espanha.html"><img src="images/bandeiras/esp.png" class="img-circle"> Liga BBVA</img></a><p></p></li>
+        	<li><a href="italia.html"><img src="images/bandeiras/it.png" class="img-circle"> Série A TIM</img></a><p></p></li>
+        	<li><a href="alemanha.html"><img src="images/bandeiras/gr.png" class="img-circle"> Bundesliga</img></a><p></p></li>
+        	<li><a href="inglaterra.html"><img src="images/bandeiras/uk.png" class="img-circle"> Barclays Premier League</img></a><p></p></li>
+        	</ul>
+        </div>
+
+        <div class="col-md-9">
+        <div class="container-fluid">
+        <div class="titulo">
+        <p id="jogosProx">Próximos Jogos</p>
+        </div>
+
+        <div id="jogo-hoje">
+
+        </div>
+        </div>
+        </div>
+        </div>
+  		</div>
+	</div>
+
+
+<div class="footer">
+  <p id="copyright">&copy; 2015 - Carlos Carvalho &amp; Luis Passos.</p>
+  </div>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

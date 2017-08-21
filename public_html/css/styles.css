@@ -1,0 +1,797 @@
+
+@font-face {
+    font-family: fontSmall;
+    src: url(../fonts/OpenSans-Semibold.ttf);
+}
+
+body {
+    background: url(../images/background.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: fontSmall !important;
+}
+
+
+.header {
+    background: url(../images/head.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 20vh;
+}
+
+.header img {
+    padding-top: 3vh;
+    padding-left: 3vh;
+    height: 13vh;
+    width: 35vh;
+}
+
+img {
+    height: 25px;
+    width: 25px;
+}
+
+.menu {
+    background: url(../images/head.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    height: 830px;
+}
+
+.main {
+    background-color: rgba(230, 238, 244, 1);
+}
+
+.footer {
+    background: url(../images/head.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 30px;
+    text-align: center;
+}
+
+.footer p {
+    padding-top: 1vh;
+}
+
+a {
+    margin-left: 1vh;
+}
+
+.col-md-3 p {
+    font-size: 20px;
+}
+
+.titulo {
+    background: url(../images/head.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-top: 3vh;
+    height: 60px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 20px;
+    margin-bottom: 2vh;
+}
+
+.titulo p {
+    margin-top: 1vh;
+}
+
+table tr {
+    color: #3d3d3d;
+}
+
+/* ---------------------------- INGLATERRA ---------------------------*/
+
+#pontuacaoing {
+    border-left: 1px solid #ccc;
+    margin-top: 3vh;
+    padding-left: 1vh;
+}
+
+#pontuacaoing > table tr:nth-child(1) {
+    background-color: #3d3d3d;
+    color: white;
+}
+
+#pontuacaoing > table tr:nth-child(2) {
+    background-color: #031875;
+    color: white;
+}
+
+#pontuacaoing > table tr:nth-child(3) {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaoing > table tr:nth-child(4) {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaoing > table tr:nth-child(5) {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaoing > table tr:nth-child(6) ,
+#pontuacaoing > table tr:nth-child(7) {
+    background-color: #ffa90a;
+    color: white;
+}
+
+
+#pontuacaoing > table tr:nth-child(8) td:first-child ,
+#pontuacaoing > table tr:nth-child(9) td:first-child ,
+#pontuacaoing > table tr:nth-child(10) td:first-child ,
+#pontuacaoing > table tr:nth-child(11) td:first-child ,
+#pontuacaoing > table tr:nth-child(12) td:first-child ,
+#pontuacaoing > table tr:nth-child(13) td:first-child ,
+#pontuacaoing > table tr:nth-child(14) td:first-child ,
+#pontuacaoing > table tr:nth-child(15) td:first-child ,
+#pontuacaoing > table tr:nth-child(16) td:first-child ,
+#pontuacaoing > table tr:nth-child(17) td:first-child ,
+#pontuacaoing > table tr:nth-child(18) td:first-child {
+    background-color: #3d3d3d;
+    color: white;
+}
+
+#pontuacaoing > table tr:nth-child(19) ,
+#pontuacaoing > table tr:nth-child(20) ,
+#pontuacaoing > table tr:nth-child(21) {
+    background-color: #ef0000;
+    color: white;
+}
+
+#pontuacaograndeing > table tr:nth-child(1) {
+    background-color: #3d3d3d;
+    color: white;
+}
+
+#pontuacaograndeing > table tr:nth-child(2) {
+    background-color: #031875;
+    color: white;
+}
+
+#pontuacaograndeing > table tr:nth-child(3) {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaograndeing > table tr:nth-child(4) {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaograndeing > table tr:nth-child(5) {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaograndeing > table tr:nth-child(6) {
+    background-color: #ffa90a;
+    color: white;
+}
+
+#pontuacaograndeing > table tr:nth-child(7) {
+    background-color: #ffa90a;
+    color: white;
+}
+
+
+#pontuacaograndeing > table tr:nth-child(8) td:first-child,
+#pontuacaograndeing > table tr:nth-child(9) td:first-child,
+#pontuacaograndeing > table tr:nth-child(10) td:first-child,
+#pontuacaograndeing > table tr:nth-child(11) td:first-child,
+#pontuacaograndeing > table tr:nth-child(12) td:first-child,
+#pontuacaograndeing > table tr:nth-child(13) td:first-child,
+#pontuacaograndeing > table tr:nth-child(14) td:first-child,
+#pontuacaograndeing > table tr:nth-child(15) td:first-child,
+#pontuacaograndeing > table tr:nth-child(16) td:first-child,
+#pontuacaograndeing > table tr:nth-child(17) td:first-child,
+#pontuacaograndeing > table tr:nth-child(18) td:first-child {
+    background-color: #3d3d3d;
+    color: white;
+}
+
+#pontuacaograndeing > table tr:nth-child(19),
+#pontuacaograndeing > table tr:nth-child(20),
+#pontuacaograndeing > table tr:nth-child(21){
+    background-color: #ef0000;
+    color: white;
+}
+
+/* ------------------------------------- PORTUGAL ------------------------------- */
+
+#pontuacaopt > table tr:nth-child(1) {
+    background-color: #3d3d3d ;
+    color: white;
+}
+
+#pontuacaopt > table tr:nth-child(2)  {
+    background-color: #031875;
+    color: white;
+}
+
+#pontuacaopt > table tr:nth-child(3) {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaopt > table tr:nth-child(4)  {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaopt > table tr:nth-child(5) {
+    background-color: #ffa90a;
+    color: white;
+}
+
+#pontuacaopt > table tr:nth-child(6) {
+    background-color: #ffa90a;
+    color: white;
+}
+
+#pontuacaopt > table tr:nth-child(7) td:first-child,
+#pontuacaopt > table tr:nth-child(8) td:first-child,
+#pontuacaopt > table tr:nth-child(9) td:first-child,
+#pontuacaopt > table tr:nth-child(10) td:first-child,
+#pontuacaopt > table tr:nth-child(11) td:first-child,
+#pontuacaopt > table tr:nth-child(12) td:first-child,
+#pontuacaopt > table tr:nth-child(13) td:first-child,
+#pontuacaopt > table tr:nth-child(14) td:first-child,
+#pontuacaopt > table tr:nth-child(15) td:first-child,
+#pontuacaopt > table tr:nth-child(16) td:first-child,
+#pontuacaopt > table tr:nth-child(17) td:first-child {
+    background-color: #3d3d3d;
+    color: white;
+}
+
+#pontuacaopt > table tr:nth-child(18),
+#pontuacaopt > table tr:nth-child(19){
+    background-color: #ef0000;
+    color: white;
+}
+
+
+#pontuacaograndept  >table tr:nth-child(1) {
+    background-color: #3d3d3d ;
+    color: white;
+}
+
+#pontuacaograndept table tr:nth-child(2)  {
+    background-color: #031875;
+    color: white;
+}
+
+#pontuacaograndept > table tr:nth-child(3) {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaograndept > table tr:nth-child(4)  {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaograndept > table tr:nth-child(5) {
+    background-color: #ffa90a;
+    color: white;
+}
+
+#pontuacaograndept > table tr:nth-child(6) {
+    background-color: #ffa90a;
+    color: white;
+}
+
+#pontuacaograndept > table tr:nth-child(7) td:first-child,
+#pontuacaograndept > table tr:nth-child(8) td:first-child,
+#pontuacaograndept > table tr:nth-child(9) td:first-child,
+#pontuacaograndept > table tr:nth-child(10) td:first-child,
+#pontuacaograndept > table tr:nth-child(11) td:first-child,
+#pontuacaograndept > table tr:nth-child(12) td:first-child,
+#pontuacaograndept > table tr:nth-child(13) td:first-child,
+#pontuacaograndept > table tr:nth-child(14) td:first-child,
+#pontuacaograndept > table tr:nth-child(15) td:first-child,
+#pontuacaograndept > table tr:nth-child(16) td:first-child,
+#pontuacaograndept > table tr:nth-child(17) td:first-child {
+    background-color: #3d3d3d;
+    color: white;
+}
+
+#pontuacaograndept > table tr:nth-child(7) td:nth-child(2),
+#pontuacaograndept > table tr:nth-child(8) td:nth-child(2),
+#pontuacaograndept > table tr:nth-child(9) td:nth-child(2),
+#pontuacaograndept > table tr:nth-child(10) td:nth-child(2),
+#pontuacaograndept > table tr:nth-child(11) td:nth-child(2),
+#pontuacaograndept > table tr:nth-child(12) td:nth-child(2),
+#pontuacaograndept > table tr:nth-child(13) td:nth-child(2),
+#pontuacaograndept > table tr:nth-child(14) td:nth-child(2),
+#pontuacaograndept > table tr:nth-child(15) td:nth-child(2),
+#pontuacaograndept > table tr:nth-child(16) td:nth-child(2),
+#pontuacaograndept > table tr:nth-child(17) td:nth-child(2) {
+    color: #3d3d3d;
+}
+
+#pontuacaograndept > table tr:nth-child(18),
+#pontuacaograndept > table tr:nth-child(19){
+    background-color: #ef0000;
+    color: white;
+}
+
+/* ---------------------------- Espanha ---------------------------*/
+
+#pontuacaoesp {
+    border-left: 1px solid #ccc;
+    margin-top: 3vh;
+    padding-left: 1vh;
+}
+
+#pontuacaoesp > table tr:nth-child(1) {
+    background-color: #3d3d3d;
+    color: white;
+}
+
+#pontuacaoesp > table tr:nth-child(2)  {
+    background-color: #031875;
+    color: white;
+}
+
+#pontuacaoesp > table tr:nth-child(3)  {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaoesp > table tr:nth-child(4)  {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaoesp > table tr:nth-child(5)  {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaoesp > table tr:nth-child(6) ,
+#pontuacaoesp > table tr:nth-child(7)  {
+    background-color: #ffa90a;
+    color: white;
+}
+
+#pontuacaoesp > table tr:nth-child(8) td:first-child,
+#pontuacaoesp > table tr:nth-child(9) td:first-child,
+#pontuacaoesp > table tr:nth-child(10) td:first-child,
+#pontuacaoesp > table tr:nth-child(11) td:first-child,
+#pontuacaoesp > table tr:nth-child(12) td:first-child,
+#pontuacaoesp > table tr:nth-child(13) td:first-child,
+#pontuacaoesp > table tr:nth-child(14) td:first-child,
+#pontuacaoesp > table tr:nth-child(15) td:first-child,
+#pontuacaoesp > table tr:nth-child(16) td:first-child,
+#pontuacaoesp > table tr:nth-child(17) td:first-child,
+#pontuacaoesp > table tr:nth-child(18) td:first-child  {
+    background-color: #3d3d3d;
+    color: white;
+}
+
+#pontuacaoesp > table tr:nth-child(19) ,
+#pontuacaoesp > table tr:nth-child(20) ,
+#pontuacaoesp > table tr:nth-child(21)   {
+    background-color: #ef0000;
+    color: white;
+}
+
+#pontuacaograndeesp > table tr:nth-child(1) {
+    background-color: #3d3d3d;
+    color: white;
+}
+
+#pontuacaograndeesp > table tr:nth-child(2)  {
+    background-color: #031875;
+    color: white;
+}
+
+#pontuacaograndeesp > table tr:nth-child(3) {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaograndeesp > table tr:nth-child(4)  {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaograndeesp > table tr:nth-child(5) {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaograndeesp > table tr:nth-child(6),
+#pontuacaograndeesp > table tr:nth-child(7) {
+    background-color: #ffa90a;
+    color: white;
+}
+
+#pontuacaograndeesp > table tr:nth-child(8) td:first-child,
+#pontuacaograndeesp > table tr:nth-child(9) td:first-child,
+#pontuacaograndeesp > table tr:nth-child(10) td:first-child,
+#pontuacaograndeesp > table tr:nth-child(11) td:first-child,
+#pontuacaograndeesp > table tr:nth-child(12) td:first-child,
+#pontuacaograndeesp > table tr:nth-child(13) td:first-child,
+#pontuacaograndeesp > table tr:nth-child(14) td:first-child,
+#pontuacaograndeesp > table tr:nth-child(15) td:first-child,
+#pontuacaograndeesp > table tr:nth-child(16) td:first-child,
+#pontuacaograndeesp > table tr:nth-child(17) td:first-child,
+#pontuacaograndeesp > table tr:nth-child(18) td:first-child {
+    background-color: #3d3d3d;
+    color: white;
+}
+
+#pontuacaograndeesp > table tr:nth-child(19),
+#pontuacaograndeesp > table tr:nth-child(20),
+#pontuacaograndeesp > table tr:nth-child(21){
+    background-color: #ef0000;
+    color: white;
+}
+
+/*----------------- Alemanha ---------------------*/
+
+#pontuacaoale {
+    border-left: 1px solid #ccc;
+    margin-top: 3vh;
+    padding-left: 1vh;
+}
+
+#pontuacaoale > table tr:nth-child(1) {
+    background-color: #3d3d3d;
+    color: white;
+}
+
+#pontuacaoale > table tr:nth-child(2)  {
+    background-color: #031875;
+    color: white;
+}
+
+#pontuacaoale > table tr:nth-child(3)  {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaoale > table tr:nth-child(4)  {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaoale > table tr:nth-child(5)  {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaoale > table tr:nth-child(6) ,
+#pontuacaoale > table tr:nth-child(7)  {
+    background-color: #ffa90a;
+    color: white;
+}
+
+#pontuacaoale > table tr:nth-child(8) td:first-child,
+#pontuacaoale > table tr:nth-child(9) td:first-child,
+#pontuacaoale > table tr:nth-child(10) td:first-child,
+#pontuacaoale > table tr:nth-child(11) td:first-child,
+#pontuacaoale > table tr:nth-child(12) td:first-child,
+#pontuacaoale > table tr:nth-child(13) td:first-child,
+#pontuacaoale > table tr:nth-child(14) td:first-child,
+#pontuacaoale > table tr:nth-child(15) td:first-child,
+#pontuacaoale > table tr:nth-child(16) td:first-child
+{
+    background-color: #3d3d3d;
+    color: white;
+}
+
+#pontuacaoale > table tr:nth-child(17)   {
+    background-color: #F05656;
+    color: white;
+}
+
+#pontuacaoale > table tr:nth-child(18),
+#pontuacaoale > table tr:nth-child(19)   {
+    background-color: #ef0000;
+    color: white;
+}
+
+#pontuacaograndeale > table tr:nth-child(1) {
+    background-color: #3d3d3d;
+    color: white;
+}
+
+#pontuacaograndeale > table tr:nth-child(2)  {
+    background-color: #031875;
+    color: white;
+}
+
+#pontuacaograndeale > table tr:nth-child(3) {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaograndeale > table tr:nth-child(4)  {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaograndeale > table tr:nth-child(5) {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaograndeale > table tr:nth-child(6),
+#pontuacaograndeale > table tr:nth-child(7) {
+    background-color: #ffa90a;
+    color: white;
+}
+
+#pontuacaograndeale > table tr:nth-child(8) td:first-child,
+#pontuacaograndeale > table tr:nth-child(9) td:first-child,
+#pontuacaograndeale > table tr:nth-child(10) td:first-child,
+#pontuacaograndeale > table tr:nth-child(11) td:first-child,
+#pontuacaograndeale > table tr:nth-child(12) td:first-child,
+#pontuacaograndeale > table tr:nth-child(13) td:first-child,
+#pontuacaograndeale > table tr:nth-child(14) td:first-child,
+#pontuacaograndeale > table tr:nth-child(15) td:first-child,
+#pontuacaograndeale > table tr:nth-child(16) td:first-child {
+    background-color: #3d3d3d;
+    color: white;
+}
+
+#pontuacaograndeale > table tr:nth-child(17){
+    background-color: #F05656;
+    color: white;
+}
+
+#pontuacaograndeale > table tr:nth-child(18),
+#pontuacaograndeale > table tr:nth-child(19){
+    background-color: #ef0000;
+    color: white;
+}
+
+/* ------------------- ITALIA ------------------- */
+
+#pontuacaoita > table tr:nth-child(1) {
+    background-color: #3d3d3d ;
+    color: white;
+}
+
+#pontuacaoita  > table tr:nth-child(2)  {
+    background-color: #031875;
+    color: white;
+}
+
+#pontuacaoita  > table tr:nth-child(3) {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaoita > table tr:nth-child(4)  {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaoita > table tr:nth-child(5) {
+    background-color: #ffa90a;
+    color: white;
+}
+
+#pontuacaoita > table tr:nth-child(6) {
+    background-color: #ffa90a;
+    color: white;
+}
+
+#pontuacaoita > table tr:nth-child(7) td:first-child,
+#pontuacaoita > table tr:nth-child(8) td:first-child,
+#pontuacaoita > table tr:nth-child(9) td:first-child,
+#pontuacaoita > table tr:nth-child(10) td:first-child,
+#pontuacaoita > table tr:nth-child(11) td:first-child,
+#pontuacaoita > table tr:nth-child(12) td:first-child,
+#pontuacaoita > table tr:nth-child(13) td:first-child,
+#pontuacaoita > table tr:nth-child(14) td:first-child,
+#pontuacaoita > table tr:nth-child(15) td:first-child,
+#pontuacaoita > table tr:nth-child(16) td:first-child,
+#pontuacaoita > table tr:nth-child(17) td:first-child,
+#pontuacaoita > table tr:nth-child(18) td:first-child{
+    background-color: #3d3d3d;
+    color: white;
+}
+
+
+#pontuacaoita > table tr:nth-child(19),
+#pontuacaoita > table tr:nth-child(20),
+#pontuacaoita > table tr:nth-child(21){
+    background-color: #ef0000;
+    color: white;
+}
+
+
+#pontuacaograndeita > table tr:nth-child(1) {
+    background-color: #3d3d3d ;
+    color: white;
+}
+
+#pontuacaograndeita > table tr:nth-child(2)  {
+    background-color: #031875;
+    color: white;
+}
+
+#pontuacaograndeita > table tr:nth-child(3) {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaograndeita > table tr:nth-child(4)  {
+    background-color: #155698;
+    color: white;
+}
+
+#pontuacaograndeita > table tr:nth-child(5) {
+    background-color: #ffa90a;
+    color: white;
+}
+
+#pontuacaograndeita > table tr:nth-child(6) {
+    background-color: #ffa90a;
+    color: white;
+}
+
+#pontuacaograndeita > table tr:nth-child(7) td:first-child,
+#pontuacaograndeita > table tr:nth-child(8) td:first-child,
+#pontuacaograndeita > table tr:nth-child(9) td:first-child,
+#pontuacaograndeita > table tr:nth-child(10) td:first-child,
+#pontuacaograndeita > table tr:nth-child(11) td:first-child,
+#pontuacaograndeita > table tr:nth-child(12) td:first-child,
+#pontuacaograndeita > table tr:nth-child(13) td:first-child,
+#pontuacaograndeita > table tr:nth-child(14) td:first-child,
+#pontuacaograndeita > table tr:nth-child(15) td:first-child,
+#pontuacaograndeita > table tr:nth-child(16) td:first-child,
+#pontuacaograndeita > table tr:nth-child(17) td:first-child,
+#pontuacaograndeita > table tr:nth-child(18) td:first-child {
+    background-color: #3d3d3d;
+    color: white;
+}
+
+
+#pontuacaograndeita > table tr:nth-child(19),
+#pontuacaograndeita > table tr:nth-child(20),
+#pontuacaograndeita > table tr:nth-child(21){
+    background-color: #ef0000;
+    color: white;
+}
+
+
+/*------------------- Jogadores ---------------------------*/
+
+#jogadores-clube > table tr:nth-child(1) {
+    background-color: #3d3d3d ;
+    color: white;
+}
+
+
+#jogadores-clube > table td:first-child {
+    background-color: #3d3d3d ;
+    color: white;
+}
+
+#clube {
+    border: 1px solid black;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+#clube-atual {
+    border: 1px solid black;
+    padding-top: 2vh;
+    text-align: center;
+    color: #3d3d3d;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+#clube-atual img {
+    width: 150px;
+    height: 150px;
+}
+
+#jogadores-clube {
+    padding-top: 2vh;
+}
+
+/*---------------Jornada---------------------------*/
+
+#jogo-semana > table tr:nth-child(1) {
+    background-color: #3d3d3d ;
+    color: white;
+}
+
+#jogo-semana > table tr:nth-child(2n+2) {
+    background-color: #CFCFCF ;
+}
+
+#jogo-semana > table td:first-child {
+    background-color: #3d3d3d ;
+    color: white;
+}
+
+
+#pos {
+    color: white;
+}
+
+
+#camp{
+    color: #FFFFFF;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+#jogosProx{
+    padding-top: 1vh;
+    color: #FFFFFF;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+a:link {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FF0000;
+    text-decoration: none;
+}
+
+table a:link {
+    color: #3d3d3d;
+    text-decoration: none;
+}
+
+table a:visited {
+    color: #3d3d3d;
+    text-decoration: none;
+}
+
+table a:hover{
+    color: #FF0000;
+    text-decoration: none;
+}
+
+#copyright{
+    color: #FFFFFF;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+ul li img {
+    border: 2px solid white;
+}
+
+.bs-example-modal-lg {
+
+}

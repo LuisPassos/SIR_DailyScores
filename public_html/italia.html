@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>DailyScores - Série A TIM</title>
+
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+
+        <script src="js/jquery-2.1.4.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                getTabela();
+                getGames();
+                getTabelaGrande();
+                $("tabgrande").click(tabelaGrande);
+            });
+
+            function getTabela() {
+                $.ajax('http://api.football-data.org/alpha/soccerseasons/401/leagueTable', {
+                    headers: {'X-Auth-Token': 'X'},
+                    dataType: 'json',
+                    type: 'GET',
+                    success: showdata
+
+                });
+            }
+
+            function getTabelaGrande() {
+                $.ajax('http://api.football-data.org/alpha/soccerseasons/401/leagueTable', {
+                    headers: {'X-Auth-Token': 'X'},
+                    dataType: 'json',
+                    type: 'GET',
+                    success: tabelaGrande
+
+                });
+            }
+
+            function getGames() {
+                $.ajax('http://api.football-data.org/alpha/soccerseasons/401/fixtures', {
+                    headers: {'X-Auth-Token': 'X'},
+                    dataType: 'json',
+                    type: 'GET',
+                    success: showgames
+
+                });
+            }
+
+            function tabelaGrande(data2) {
+                console.log(data2);
+                var tabela = $("<table/>").addClass("table table-bordered");
+                var t = $("<tr/>");
+                tabela.append(t);
+                var td2 = $("<td/>").html("P");
+                var td3 = $("<td/>").html("Clube");
+                var td4 = $("<td/>").html("Pontos");
+                var td6 = $("<td/>").html("V");
+                var td7 = $("<td/>").html("E");
+                var td8 = $("<td/>").html("D");
+                var td9 = $("<td/>").html("GM");
+                var td10 = $("<td/>").html("GS");
+                t.append(td2);
+                t.append(td3);
+                t.append(td4);
+                t.append(td6);
+                t.append(td7);
+                t.append(td8);
+                t.append(td9);
+                t.append(td10);
+                for (var i = 0; i < data2.standing.length; i++) {
+                    var tr = $("<tr/>");
+                    tabela.append(tr);
+                    var clube = data2.standing[i]._links.team.href;
+                    var numero_clube = "";
+                    for (y = 0; y < clube.length; y++) {
+                        if (clube.charAt(y) === 0 || clube.charAt(y) === 1 || clube.charAt(y) === 2 || clube.charAt(y) === 3 || clube.charAt(y) === 4 || clube.charAt(y) === 5 || clube.charAt(y) === 6 || clube.charAt(y) === 7 || clube.charAt(y) === 8 || clube.charAt(y) === 9) {
+                            numero_clube = numero_clube + clube.charAt(y);
+                        }
+                    }
+                    var td1 = $("<td/>").html(i + 1);
+                    if (i < 5 || i > 15) {
+                        var texto = $("<a/>").attr("id", "pos").attr("href", "clubes.php?numero_clube=" + numero_clube).html(data2.standing[i].teamName);
+                    } else {
+                        var texto = $("<a/>").attr("href", "clubes.php?numero_clube=" + numero_clube).html(data2.standing[i].teamName);
+                    }
+                    var td = $("<td/>").html(texto);
+                    var td5 = $("<td/>").html(data2.standing[i].points);
+                    var vitorias = $("<td/>").html(data2.standing[i].wins);
+                    var empates = $("<td/>").html(data2.standing[i].draws);
+                    var derrotas = $("<td/>").html(data2.standing[i].losses);
+                    var marcados = $("<td/>").html(data2.standing[i].goals);
+                    var sofridos = $("<td/>").html(data2.standing[i].goalsAgainst);
+                    tr.append(td1);
+                    tr.append(td);
+                    tr.append(td5);
+                    tr.append(vitorias);
+                    tr.append(empates);
+                    tr.append(derrotas);
+                    tr.append(marcados);
+                    tr.append(sofridos);
+                }
+                $("#pontuacaograndeita").append(tabela);
+
+            }
+
+
+            function showdata(data) {
+                var tabela = $("<table/>").addClass("table table-bordered");
+                var t = $("<tr/>");
+                tabela.append(t);
+                var td2 = $("<td/>").html("P");
+                var td3 = $("<td/>").html("Clube");
+                var td4 = $("<td/>").html("Pontos");
+                t.append(td2);
+                t.append(td3);
+                t.append(td4);
+                for (var i = 0; i < data.standing.length; i++) {
+                    var tr = $("<tr/>");
+                    tabela.append(tr);
+                    var clube = data.standing[i]._links.team.href;
+                    var numero_clube = "";
+                    for (y = 0; y < clube.length; y++) {
+                        if (clube.charAt(y) === 0 || clube.charAt(y) === 1 || clube.charAt(y) === 2 || clube.charAt(y) === 3 || clube.charAt(y) === 4 || clube.charAt(y) === 5 || clube.charAt(y) === 6 || clube.charAt(y) === 7 || clube.charAt(y) === 8 || clube.charAt(y) === 9) {
+                            numero_clube = numero_clube + clube.charAt(y);
+                        }
+                    }
+                    var td1 = $("<td/>").html(i + 1);
+                    var texto = $("<a/>").attr("href", "clubes.php?numero_clube=" + numero_clube).html(data.standing[i].teamName);
+                    var td = $("<td/>").html(texto);
+                    var td5 = $("<td/>").html(data.standing[i].points);
+                    tr.append(td1);
+                    tr.append(td);
+                    tr.append(td5);
+                }
+                $("#pontuacaoita").append(tabela);
+
+            }
+
+            function showgames(dados) {
+                var hoje = new Date();
+                var jornada = 0;
+                for (var i = 0; i < dados.count; i++) {
+                    var data_jogo = new Date(dados.fixtures[i].date);
+                    if (data_jogo.getDate() > hoje.getDate() && data_jogo.getMonth() > hoje.getMonth() && data_jogo.getFullYear() > hoje.getFullYear()) {
+                        var jornada = dados.fixtures[i].matchday;
+                        break;
+                    }
+                    if (data_jogo.getDate() > hoje.getDate() && data_jogo.getMonth() === hoje.getMonth() && data_jogo.getFullYear() === hoje.getFullYear()) {
+                        var jornada = dados.fixtures[i].matchday;
+                        break;
+                    }
+                    if (data_jogo.getDate() > hoje.getDate() && data_jogo.getMonth() > hoje.getMonth() && data_jogo.getFullYear() === hoje.getFullYear()) {
+                        var jornada = dados.fixtures[i].matchday;
+                        break;
+                    }
+                    if (data_jogo.getDate() > hoje.getDate() && data_jogo.getMonth() <= hoje.getMonth() && data_jogo.getFullYear() > hoje.getFullYear()) {
+                        var jornada = dados.fixtures[i].matchday;
+                        break;
+                    }
+                    if (data_jogo.getDate() < hoje.getDate() && data_jogo.getMonth() > hoje.getMonth() && data_jogo.getFullYear() > hoje.getFullYear()) {
+                        var jornada = dados.fixtures[i].matchday;
+                        break;
+                    }
+                    if (data_jogo.getDate() < hoje.getDate() && data_jogo.getMonth() > hoje.getMonth() && data_jogo.getFullYear() === hoje.getFullYear()) {
+                        var jornada = dados.fixtures[i].matchday;
+                        break;
+                    }
+                    if (data_jogo.getDate() < hoje.getDate() && data_jogo.getMonth() <= hoje.getMonth() && data_jogo.getFullYear() > hoje.getFullYear()) {
+                        var jornada = dados.fixtures[i].matchday;
+                        break;
+                    }
+                    if (data_jogo.getDate() === hoje.getDate() && data_jogo.getMonth() > hoje.getMonth() && data_jogo.getFullYear() === hoje.getFullYear()) {
+                        var jornada = dados.fixtures[i].matchday;
+                        break;
+                    }
+                    if (data_jogo.getDate() === hoje.getDate() && data_jogo.getMonth() > hoje.getMonth() && data_jogo.getFullYear() > hoje.getFullYear()) {
+                        var jornada = dados.fixtures[i].matchday;
+                        break;
+                    }
+                    if (data_jogo.getDate() === hoje.getDate() && data_jogo.getMonth() <= hoje.getMonth() && data_jogo.getFullYear() > hoje.getFullYear()) {
+                        var jornada = dados.fixtures[i].matchday;
+                        break;
+                    }
+                    if (data_jogo.getDate() === hoje.getDate() && data_jogo.getMonth() === hoje.getMonth() && data_jogo.getFullYear() === hoje.getFullYear()) {
+                        var jornada = dados.fixtures[i].matchday;
+                        break;
+                    }
+                }
+                var tabela = $("<table/>").addClass("table table-bordered");
+                var t = $("<tr/>");
+                tabela.append(t);
+                var td2 = $("<td/>").html("Data/Hora");
+                var td3 = $("<td/>").html("Casa");
+                var td4 = $("<td/>").html("Resultado");
+                var td5 = $("<td/>").html("Fora");
+                var td6 = $("<td/>").html("Jornada");
+                t.append(td2);
+                t.append(td3);
+                t.append(td4);
+                t.append(td5);
+                t.append(td6);
+                for (var i = 0; i < dados.count; i++) {
+                    if (jornada === dados.fixtures[i].matchday) {
+                        var jogo_data = new Date(dados.fixtures[i].date);
+                        var tr = $("<tr/>");
+                        tabela.append(tr);
+                        var minutos = jogo_data.getMinutes();
+                        if (minutos === 0) {
+                            minutos = "0" + minutos;
+                        }
+                        var hora = $("<td/>").html(jogo_data.getDate() + "/" + jogo_data.getMonth() + " " + jogo_data.getHours() + ":" + minutos + "H");
+                        tr.append(hora);
+                        var casa = $("<td/>").html(dados.fixtures[i].homeTeamName);
+                        tr.append(casa);
+                        var resultado1 = dados.fixtures[i].result.goalsAwayTeam;
+                        var resultado2 = dados.fixtures[i].result.goalsHomeTeam;
+                        if (resultado1 === -1) {
+                            resultado1 = 0;
+                            resultado2 = 0;
+                        }
+                        var resulta = resultado2 + "x" + resultado1;
+                        var resultado = $("<td/>").html(resulta);
+                        tr.append(resultado);
+                        var fora = $("<td/>").html(dados.fixtures[i].awayTeamName);
+                        tr.append(fora);
+                        var jornada_jogo = $("<td/>").html(dados.fixtures[i].matchday);
+                        tr.append(jornada_jogo);
+                    }
+                }
+                $("#jogo-semana").append(tabela);
+            }
+
+
+
+        </script>
+
+    </head>
+    <body>
+        <div class="container">
+
+            <a href="index.html"><img src="images/logo.png" alt=""></img></a>
+
+
+            <div class="main">
+                <div class="row">
+                    <div class="container">
+                        <div class="col-md-3 menu">
+                            <p id="camp">Campeonatos</p>
+                            <hr>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="portugal.html"><img src="images/bandeiras/pt.png" class="img-circle" alt=""> Liga NOS</img></a><p></p></li>
+                                <li><a href="espanha.html"><img src="images/bandeiras/esp.png" class="img-circle" alt=""> Liga BBVA</img></a><p></p></li>
+                                <li><a href="italia.html"><img src="images/bandeiras/it.png" class="img-circle" alt=""> Série A TIM</img></a><p></p></li>
+                                <li><a href="alemanha.html"><img src="images/bandeiras/gr.png" class="img-circle" alt=""> Bundesliga</img></a><p></p></li>
+                                <li><a href="inglaterra.html"><img src="images/bandeiras/uk.png" class="img-circle" alt=""> Barclays Premier League</img></a><p></p></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="container-fluid">
+                                <div class="titulo">
+                                    <p id="jogosProx">Jornada</p>
+                                </div>
+
+                                <div id="jogo-semana">
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3" id="menu-pontos">
+                            <div id="pontuacaoita">
+
+                            </div>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" id="tabgrande">+ Info</button>
+
+
+                            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content" id="pontuacaograndeita">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="footer">
+                <p>&copy; 2015 - Carlos Carvalho &amp; Luis Passos.</p>
+            </div>
+        </div>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>
